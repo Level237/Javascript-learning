@@ -372,7 +372,7 @@ console.log(ages.find(curr => curr >= 18));
 
 /*****************
  * Lecture:Spread operator
- */
+
 
 function addFourAges(a,b,c,d){
     return a+b+c+d;
@@ -403,3 +403,53 @@ const all=[h,...boxes];
 
 Array.from(all).forEach(curr =>
     curr.style.color='purple');
+ */
+
+
+
+
+
+    /***************
+     * Lecture :Rest Paramaters
+
+
+// ES5
+function isFulAge5(){
+    //console.log(arguments);
+    var argsArr=Array.prototype.slice.call(arguments);
+
+    argsArr.forEach(function(cur){
+        console.log((2016 - cur) >= 18);
+    })
+}
+
+//isFulAge5(1990,1999,1965);
+
+
+// ES6
+
+function isFulAge6(...years){
+    years.forEach(curr => console.log((2016 - curr) >= 18));
+}
+isFulAge6(1990,1999,1965);
+
+     */
+
+function isFulAge5(){
+    //console.log(arguments);
+    var argsArr=Array.prototype.slice.call(arguments);
+
+    argsArr.forEach(function(cur){
+        console.log((2016 - cur) >= 18);
+    })
+}
+
+//isFulAge5(1990,1999,1965);
+
+
+// ES6
+
+function isFulAge6(limit,...years){
+    years.forEach(curr => console.log((2016 - curr) >= limit));
+}
+isFulAge6(16,1990,1999,1965);
