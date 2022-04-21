@@ -76,7 +76,7 @@ console.log(c);
  * Lecture :Strings
  */
 
-let firstName='john';
+let firstName='John';
 let lastName='Swith';
 const yearOfBirth=1998;
 
@@ -88,8 +88,11 @@ function calcAge(year){
 console.log('This is' + firstName + ' ' +lastName + '- He was born in' + yearOfBirth + '. Today he is '+ calcAge(yearOfBirth) +'years old');
 
 //ES6
-console.log('This is ${firstName} ${lastName}. he was born in ${yeatOfBirth}. Today he is ${calcAge(yearOfBirth)} years old');
+console.log(`This is ${firstName} ${lastName}. he was born in ${yearOfBirth}. Today he is ${calcAge(yearOfBirth)} years old`);
 
-const n='${firstName} ${lastName}';
+const n=`${firstName} ${lastName}`;
 
 console.log(n.startsWith('J'));
+console.log(n.endsWith('Sm'))
+console.log(n.includes('oh'))
+console.log(`${firstName } ` .repeat(5) );
