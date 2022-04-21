@@ -433,7 +433,7 @@ function isFulAge6(...years){
 }
 isFulAge6(1990,1999,1965);
 
-     */
+
 
 function isFulAge5(){
     //console.log(arguments);
@@ -453,3 +453,39 @@ function isFulAge6(limit,...years){
     years.forEach(curr => console.log((2016 - curr) >= limit));
 }
 isFulAge6(16,1990,1999,1965);
+
+     */
+
+
+
+
+
+
+
+
+/*************
+ * 
+ * Lecture:Default parameters
+
+// ES5
+function SmithPerson(firstName,yearOfBirth,lastName,nationality){
+    lastName===undefined ? lastName='Smith':lastName=lastName;
+    nationality===undefined ? nationality="American" : nationality=nationality;  
+    this.firstName=firstName;
+    this.yearOfBirth=yearOfBirth;
+    this.lastName=lastName;
+    this.yearOfBirth=yearOfBirth;
+    this.nationality=nationality;
+}
+ */
+
+//ES6
+function SmithPerson(firstName,yearOfBirth,lastName='smith',nationality="American"){
+    this.firstName=firstName;
+    this.yearOfBirth=yearOfBirth;
+    this.lastName=lastName;
+    this.yearOfBirth=yearOfBirth;
+    this.nationality=nationality;
+}
+
+var john=new SmithPerson('John',1990)
