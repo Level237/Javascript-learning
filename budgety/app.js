@@ -32,7 +32,9 @@ var controller=(function(budgetCtrl,UICtrl){
     document.querySelector('.add__btn').addEventListener('click',ctrlAddItem)
     document.addEventListener('keypress',function(event){
         if(event.key==='Enter'){
+            
             ctrlAddItem();
+            
         }
         
     })
