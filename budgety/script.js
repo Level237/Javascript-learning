@@ -12,7 +12,7 @@ var UIController=(function(){
         inputType:'.add__type',
         inputDescription:'.add__description',
         inputValue:'.add__value',
-        inputBtn:'.add__btn'
+        inputBtn:'.add__btn',
     };
         return {
             getInput:function(){
