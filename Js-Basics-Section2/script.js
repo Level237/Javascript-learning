@@ -483,7 +483,7 @@ var john =['john','Smith',1990,'designer',false];
 for(var i=0;i<john.length;i++){
     console.log(john[i]);
 }
-*/
+
 
 // continue and break statements
 var john =['john','Smith',1990,'designer',false];
@@ -497,3 +497,14 @@ for(var i=0;i<john.length;i++){
 for(var i=john.length -1;i>=0;i--){
     console.log(john[i]);
 }
+*/
+
+
+
+
+
+
+
+/************************************************
+ * Coding Chalenge 5
+ */
