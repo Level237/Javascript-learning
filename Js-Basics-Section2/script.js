@@ -507,7 +507,7 @@ for(var i=john.length -1;i>=0;i--){
 
 /************************************************
  * Coding Chalenge 5
- */
+
 
 var john = {
     fullName:'John Swith',
@@ -586,3 +586,4 @@ if(john.average> mark.average){
 }else if(mark.average>john.average){
     console.log(mark.fullName + '\'s familly pays higher tips,with an average of $'+mark.average);
 }
+ */
