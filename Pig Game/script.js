@@ -8,3 +8,20 @@
     that it's the next player's turn
     - The first player to reach 100 points on global score wins the Game
  */
+
+
+
+
+
+
+
+var scores,roundScore,activePlayer,dice;
+
+scores=[0,0];
+roundScore=0;
+activePlayer=0;
+
+dice=Math.floor(Math.random() *6) + 1;
+
+console.log(dice);
+
