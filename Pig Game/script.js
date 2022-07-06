@@ -69,6 +69,8 @@ document.querySelector('.btn--roll').addEventListener('click',function(){
       document.querySelector('.player--1').classList.toggle('player--active');
       //document.querySelector('.player--0').classList.remove('player--active');
       //document.querySelector('.player--1').classList.add('player--active');
+
+      document.querySelector('.dice').style.display='none';
    }
 });
 
