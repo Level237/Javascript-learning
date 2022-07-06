@@ -59,8 +59,14 @@ document.querySelector('.btn--roll').addEventListener('click',function(){
 
    } else{
       // Next Player
+      activePlayer===0 ? activePlayer=1 : activePlayer=0;
+      roundScore=0;
 
-      
+      document.getElementById('current--0').textContent=0;
+      document.getElementById('current--0').textContent=0;
+
+      document.querySelector('.player--0').classList.remove('player--active');
+      document.querySelector('.player--1').classList.add('player--active');
    }
 });
 
