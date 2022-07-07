@@ -70,7 +70,16 @@ document.querySelector('.btn--hold').addEventListener('click',function(){
    document.querySelector('#score--' + activePlayer).textContent=scores[activePlayer];
 
    // Check if player won the game
-    nextPlayer();
+   if(scores[activePlayer]>=20){
+      document.querySelector('#name--' + activePlayer).textContent='Winner!';
+      document.querySelector('.dice').style.display='none'; 
+      document.querySelector('.player--' +activePlayer).classList.add('player--winner');
+      document.querySelector('.player--' +activePlayer).classList.remove('player--active');
+   }else{
+      nextPlayer();
+   }
+
+      
 });
 function nextPlayer(){
    // Next Player
