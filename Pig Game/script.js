@@ -58,7 +58,22 @@ document.querySelector('.btn--roll').addEventListener('click',function(){
       document.querySelector('')
 
    } else{
-      // Next Player
+      nextPlayer();
+   }
+});
+
+document.querySelector('.btn--hold').addEventListener('click',function(){
+   // Add Current score to Global Score
+   scores[activePlayer] += roundScore;
+   
+   // Update the UI
+   document.querySelector('#score--' + activePlayer).textContent=scores[activePlayer];
+
+   // Check if player won the game
+    nextPlayer();
+});
+function nextPlayer(){
+   // Next Player
       activePlayer===0 ? activePlayer=1 : activePlayer=0;
       roundScore=0;
 
@@ -71,8 +86,7 @@ document.querySelector('.btn--roll').addEventListener('click',function(){
       //document.querySelector('.player--1').classList.add('player--active');
 
       document.querySelector('.dice').style.display='none';
-   }
-});
+}
 
 
 
