@@ -309,6 +309,7 @@ console.log(fullJapan);
  * a) Question itself
  * b)the answers from which the player can choose the correct one (choose an adequate data structure here,
  * array,object,etc..)
+ * c)Correct answer
  * 
  * 2. Create a couple of questions using the constructor
  * 
@@ -344,12 +345,48 @@ console.log(fullJapan);
  * 11.Display the score in the console.Use  yet another method for this.
  */
 
+(function(){
+function Question(question,answers,correctAnswer){
+    this.question=question;
+    this.answers=answers;
+    this.correctAnswer=correctAnswer;
+}
+
+Question.prototype.displayQuestion =function(){
+    console.log(this.question);
+    for(var i=0;i< this.answers.length;i++){
+        console.log(i+':'+
+        this.answers[i]);
+    }
+}
+Question.prototype.checkAnswer=function(ans){
+    if(ans===this.correctAnswer){
+        console.log("Correct answer");
+    }else{
+        console.log('Wrong Answer');
+    }
+}
+
+
+var question1=new Question('is Javascript the Collest programming language in the World?',
+['yes','No'],0);
+var question2=new Question('What is the name of this course\'s teacher?',['John','Micheal','Jonas'],2);
+var question3=new Question('What does best describe coding?',['Boring','Hard','Fun','Tediuos'],2);
+var questions=[question1,question2,question3];
+
+var randomQuestion=Math.floor(Math.random() * questions.length);
+
+questions[randomQuestion].displayQuestion();
+
+var answer =parseInt(prompt('Please select the correct answer'));
+
+questions[randomQuestion].checkAnswer(answer);
 
 
 
 
 
-
+})();
 
 
 
