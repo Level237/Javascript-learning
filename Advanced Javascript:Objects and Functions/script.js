@@ -69,7 +69,7 @@ var jane=Object.create(personProto,
 /***************
  * 
  * Primitive vs Objects
- */
+
 
 //primitives
 var a =23;
@@ -105,3 +105,49 @@ change(age,obj);
 
 console.log(age); // 27
 console.log(obj.city); // San Francisco
+
+ */
+
+
+
+/*********************
+ * Lecture :Passing Functions as arguments 
+ */
+
+
+var years =[1990,1937,1987,2007];
+
+function arrayCalc(arr,fn){
+    var arrRes=[];
+    for(var i=0;i<arr.length;i++){
+        arrRes.push(fn(arr[i]));
+    }
+
+    return arrRes;
+}
+
+function calculateAge(elt){
+    return 2016- elt;
+}
+
+
+function isFullAge(el){
+    return el>=18;
+}
+
+function maxHeartRate(el){
+
+    if(el >= 18 && el<= 81){
+         return Math.round( 206.9 - (0.67 * el));
+    }else{
+        return -1;
+    }
+}
+
+
+var ages=arrayCalc(years,calculateAge);
+var fullAges=arrayCalc(ages,isFullAge);
+var rates=arrayCalc(ages,maxHeartRate);
+console.log(ages);
+console.log(fullAges);
+console.log(rates);
