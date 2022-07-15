@@ -1,7 +1,8 @@
 var minutes=0,hours=0,millisecondes=0,secondes=0;
+var begin;
 
 function start(){
-    setInterval(update_chrono,100)
+    begin=setInterval(update_chrono,100);
 }
 
 function update_chrono(){
@@ -25,4 +26,11 @@ function update_chrono(){
          }
     }
     
+}
+
+
+function stop(){
+    clearInterval(begin);
+
+    begin=null;
 }
