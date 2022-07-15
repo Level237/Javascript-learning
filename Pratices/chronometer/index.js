@@ -3,6 +3,7 @@ var begin;
 
 function start(){
     begin=setInterval(update_chrono,100);
+    document.getElementById('start').disabled=true;
 }
 
 function update_chrono(){
