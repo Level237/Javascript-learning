@@ -34,3 +34,10 @@ function stop(){
 
     begin=null;
 }
+
+function reset(){
+    document.querySelector('.milliseconde').innerHTML=0;
+    document.querySelector('.seconde').innerHTML=0;
+    document.querySelector('.minute').innerHTML=0;
+    document.querySelector('.hour').innerHTML=0;
+}
