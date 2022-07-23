@@ -62,6 +62,19 @@ var budgetController=(function(){
             return newItem; 
         },
 
+        deleteItem:function(type,id){
+            var ids,index;
+
+            ids=data.allItems[type].map(function(current){
+                return current.id;
+            });
+
+            index=ids.indexOf(id);
+
+            if(index !== -1){
+                data.allItems[type].splice(index,1);
+            }
+        },
         calculateBudget:function(){
 
             // calculate total income and expenses
@@ -124,10 +137,10 @@ var UIController=(function(){
                 //Create Html string with placeholder text
                 if(type==='inc'){
                     element=DOMstring.incomeContainer;
-                    html='<div class="item clearfix" id="income-%id%"><div class="item__description">%description%</div><div class="item__date"</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline">Sup</i></button></div></div></div>'
+                    html='<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="item__date"</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline">Sup</i></button></div></div></div>'
                 }else if(type==='exp'){
                     element=DOMstring.expenseContainer;
-                    html='<div class="item clearfix" id="expense-%id%"><div class="item__description">%description%</div><div class="item__date"</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline">Sup</i></button></div></div></div>';
+                    html='<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="item__date"</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline">Sup</i></button></div></div></div>';
                 }
                 //Replace the placeholder text with some actual data
                 newHtml=html.replace('%id%',obj.id);
@@ -219,7 +232,13 @@ var controller=(function(budgetCtrl,UICtrl){
         if(itemId){
             spliteId=itemId.split('-');
             type=spliteId[0];
-            id=spliteId[1];
+            id=parseInt(spliteId[1]);
+            
+            // 1. Delete item from data structure
+            budgetCtrl.deleteItem(type,id);
+            // 2.Delete item from UI
+
+            // 3.Update and show new Budget
         }
         };
 
