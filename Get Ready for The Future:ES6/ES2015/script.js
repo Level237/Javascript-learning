@@ -13,7 +13,7 @@ const name6= 'Jane Swith';
 let age6= 23;
 name6='Jane Miller';
 console.log(name6)
-*/
+
 // ES5
 function driversLicence5(passedTest) {
     if (passedTest) {
@@ -40,3 +40,31 @@ function driversLicence6(passedTest) {
     console.log(firstName + ' , born in ' + yearOfBirth + ' is now officially allowed to drive a car.')
 }
 driversLicence6(true)
+
+*/
+
+
+
+
+
+
+
+/*********************
+ * Lecture :Blocks and IIFEs
+ */
+
+{
+    const a = 1;
+    let b = 2;
+    var c=3;
+}
+
+//console.log(a + b);
+console.log(c);
+// ES5
+
+(function(){
+    var c=3;
+})();
+
+//console.log(c);
