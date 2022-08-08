@@ -247,7 +247,7 @@ new Person('Mike').myFriends5(friends);
  * 
  * 
  *Lecture:Destructurings
-*/
+
 
 // ES5
 
@@ -289,3 +289,71 @@ function calcAgeRetirement(year){
 const [age2,retirement]=calcAgeRetirement(1990);
 console.log(age2);
 console.log(retirement)
+*/
+
+
+
+
+
+/***********
+ * Lecture :Arrays
+ */
+
+const boxes =document.querySelectorAll('.container');
+
+//ES5
+
+var boxesArr5=Array.prototype.slice.call(boxes);
+boxesArr5.forEach(function(curr){
+    curr.style.backgroundColor ='dodgerblue';
+})
+
+
+//ES6
+const boxesArr6 =Array.from(boxes);
+Array.from(boxes).forEach(curr =>
+    curr.style.backgroundColor ='dodgerblue');
+    
+
+// ES5
+/*
+for(var i=0;i<boxesArr5.length;i++){
+    if(boxesArr5[i].className=== 'container blue'){
+        continue;
+    }
+
+    boxesArr5[i].textContent='I changed to blue';
+}
+*/
+
+
+
+// ES6
+
+for(const cur of boxesArr6){
+    if(cur.className.includes('blue')){
+        continue;
+    }
+
+    cur.textContent='I changed to blue';
+}
+
+
+// ES5
+
+var ages =[12,18,5,15,11,14,22];
+
+var full=ages.map(function(curr){
+    return curr >=18;
+})
+
+console.log(full);
+
+console.log(full.indexOf(true));
+console.log(ages[full.indexOf(true)])
+
+
+// ES6
+
+console.log(ages.findIndex(cur => cur >= 18));
+console.log(ages.find(curr => curr >= 18));
