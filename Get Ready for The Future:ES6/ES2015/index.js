@@ -297,7 +297,7 @@ console.log(retirement)
 
 /***********
  * Lecture :Arrays
- */
+
 
 const boxes =document.querySelectorAll('.container');
 
@@ -324,7 +324,6 @@ for(var i=0;i<boxesArr5.length;i++){
 
     boxesArr5[i].textContent='I changed to blue';
 }
-*/
 
 
 
@@ -357,3 +356,50 @@ console.log(ages[full.indexOf(true)])
 
 console.log(ages.findIndex(cur => cur >= 18));
 console.log(ages.find(curr => curr >= 18));
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+/*****************
+ * Lecture:Spread operator
+ */
+
+function addFourAges(a,b,c,d){
+    return a+b+c+d;
+}
+
+var sum1=addFourAges(10,39,12,3);
+console.log(sum1);
+
+//ES5
+
+var ages=[10,39,12,3];
+var sum2=addFourAges.apply(null,ages);
+console.log(sum2);
+
+//ES6
+const sum3=addFourAges(...ages);
+console.log(sum3)
+
+const familySwith=['John','Jane','Mark'];
+const familyMiller=['Mary','Bop','Ann'];
+const bigFamily=[...familySwith,...familyMiller];
+console.log(bigFamily);
+
+
+const h=document.querySelector('h1');
+const boxes=document.querySelectorAll('.container')
+const all=[h,...boxes];
+
+Array.from(all).forEach(curr =>
+    curr.style.color='purple');
