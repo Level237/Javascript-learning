@@ -598,7 +598,7 @@ console.log(question.get(ans===question.get('correct')));
 
 /*************
  * Lecture:Classes and Subclasses
- */
+
 
  var Person5=function(name,yearOfBirth,job){
     this.name=name;
@@ -667,3 +667,27 @@ console.log(question.get(ans===question.get('correct')));
 
  johnAthlete6.wonMedal();
  johnAthlete6.calculateAge();
+
+  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
