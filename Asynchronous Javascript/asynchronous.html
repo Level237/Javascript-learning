@@ -10,10 +10,10 @@
     <h1>Asynchronous Javascript</h1>
 
     <script>
-
+/*
         const second=()=>{
             setTimeout(()=>{
-                console.log("Async hey there");
+                console.log("Async hey");
             },2000);  
         }
         const first=()=>{
@@ -22,6 +22,28 @@
             console.log("the end");
         }
         first();
+        */
+
+        function getRecipe(){
+            setTimeout(()=>{
+                const recipeId=[523,883,432,974];
+                console.log(recipeId);
+
+                setTimeout((id)=>{
+                    const recipe={title:"fresh tomato pasta",publisher:"Jonas"};
+                    console.log(`${id}:${recipe.title}`);
+
+                    setTimeout((publisher)=>{
+                        const recipe2={title:"Italien Pizza",publisher:"Jonas"};
+                        console.log(recipe);
+                    },1500,recipe.publisher)
+                },1000,recipeId[2])
+            },1500)
+        }
+
+        getRecipe();
+
+
     </script>
 </body>
 </html>
