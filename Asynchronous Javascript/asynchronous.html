@@ -67,6 +67,7 @@
                  },1500,publisher);
             })
         };
+        /*
         getIDs
         .then(IDs=>{ 
             console.log(IDs);
@@ -82,7 +83,22 @@
         .catch(error=>{
             console.log("Error;;");
         })
+        */
 
+        async function getRecipeAw(){
+            const IDs=await getIDs;
+            console.log(IDs);
+            const recipe=await getRecipe(IDs[2]);
+            console.log(recipe);
+
+            const related=await getRelated('Jonas martin');
+            console.log(related);
+
+            return recipe;
+        }
+
+        getRecipeAw().then(result=> console.log(`${result} is the best ever`))
+        
 
     </script>
 </body>
