@@ -83,12 +83,11 @@
         .catch(error=>{
             console.log("Error;;");
         })
-        */
+     
 
         async function getRecipeAw(){
             const IDs=await getIDs;
-            console.log(IDs);
-            const recipe=await getRecipe(IDs[2]);
+            console.log(IDs);          const recipe=await getRecipe(IDs[2]);
             console.log(recipe);
 
             const related=await getRelated('Jonas martin');
@@ -99,6 +98,21 @@
 
         getRecipeAw().then(result=> console.log(`${result} is the best ever`))
         
+           */
+
+        fetch('https://api.meteo-concept.com/api/forecast/nextHours?token=baabe56b99df744a5e1aa08b379f7822da9eff3ebc81b60f282af5714a939ed5')
+        .then(result=>{
+            console.log(result);
+            return result.json();
+        })
+        .then(data=>{
+            const city=data.city;
+            console.log(city);
+            
+        })
+        .catch(error=>{
+            console.log(error)
+        })
 
     </script>
 </body>
